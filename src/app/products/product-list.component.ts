@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import { IProduct } from './product';
 import { ProductService } from './product.service';
@@ -7,7 +7,8 @@ import { ProductService } from './product.service';
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, AfterViewInit {
+
     pageTitle: string = 'Product List';
 
     private _listFilter: string;
@@ -23,6 +24,8 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     errorMessage: string;
+
+    @ViewChild("filterElement") filterElementRef: ElementRef;
     hitCount: number;
     filteredProducts: IProduct[];
     products: IProduct[];
@@ -39,6 +42,10 @@ export class ProductListComponent implements OnInit {
         );
     }
 
+    ngAfterViewInit(): void {
+        this.filterElementRef.nativeElement.focus();
+    }
+
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
@@ -47,7 +54,7 @@ export class ProductListComponent implements OnInit {
         if (filterBy) {
             this.filteredProducts = this.products.filter((product: IProduct) =>
                 product.productName.toLocaleLowerCase().indexOf(filterBy.toLocaleLowerCase()) !== -1);
-                this.hitCount = this.filteredProducts.length;
+            this.hitCount = this.filteredProducts.length;
         } else {
             this.filteredProducts = this.products;
         }

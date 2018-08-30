@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #Project: Angular Communication
 
 ## Check: Add filter code
+
+## Check: Add filter hit count
+
+## CHeck: Add set filter focus
