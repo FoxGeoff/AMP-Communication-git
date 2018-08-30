@@ -9,9 +9,17 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Product List';
-    listFilter: string;
-    showImage: boolean;
 
+    private _listFilter: string;
+    public get listFilter(): string {
+        return this._listFilter;
+    }
+    public set listFilter(value: string) {
+        this._listFilter = value;
+        this.performFilter(this.listFilter);
+    }
+
+    showImage: boolean;
     imageWidth: number = 50;
     imageMargin: number = 2;
     errorMessage: string;
