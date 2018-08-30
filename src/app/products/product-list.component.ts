@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     errorMessage: string;
-
+    hitCount: number;
     filteredProducts: IProduct[];
     products: IProduct[];
 
@@ -47,6 +47,7 @@ export class ProductListComponent implements OnInit {
         if (filterBy) {
             this.filteredProducts = this.products.filter((product: IProduct) =>
                 product.productName.toLocaleLowerCase().indexOf(filterBy.toLocaleLowerCase()) !== -1);
+                this.hitCount = this.filteredProducts.length;
         } else {
             this.filteredProducts = this.products;
         }
