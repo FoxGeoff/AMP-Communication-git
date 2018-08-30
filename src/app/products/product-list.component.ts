@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
     hitCount: number;
     filteredProducts: IProduct[];
     products: IProduct[];
+    includeDetail: boolean = false;
 
     constructor(private productService: ProductService) { }
 
