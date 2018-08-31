@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 
@@ -24,6 +24,7 @@ export class ProductListComponent implements OnInit {
             (products: IProduct[]) => {
                 this.products = products;
                 this.performFilter();
+                console.log("===> Can't reference #filCrit.pageTitle" );
             },
             (error: any) => this.errorMessage = <any>error
         );
