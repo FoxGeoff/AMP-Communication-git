@@ -6,7 +6,7 @@
     <div class='panel-body'>
         <!-- Filter by the Title   -->
         <div class="row">
-            <pm-filter class="col-md-10" [displayDetail]="includeDetail"></pm-filter>
+            <pm-filter class="col-md-10" [displayDetail]="includeDetail" [hitCount]= "filteredProducts?.length"></pm-filter>
         </div>
 
         <div class='table-responsive'>

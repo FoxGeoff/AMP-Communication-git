@@ -9,6 +9,7 @@ export class FilterComponent implements OnInit, AfterViewInit {
   private listFilter: string;
   @ViewChild("filterElement") filterElementRef: ElementRef;
   @Input() displayDetail: boolean;
+  @Input() hitCount: number;
 
   constructor() { }
 
