@@ -34,5 +34,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Check: Add set filter focus
 
-## Check: Add Child component looks
-## Check: Add Child component function show details
+## Check: Add Child, filter component looks
+## Check: Add Child, filter component function show details
+## check: Add to Child, filter component hitCount
