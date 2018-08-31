@@ -38,3 +38,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Check: Add Child, filter component function show details
 ## Check: Add to Child, filter component hitCount
 ## Check: Add to Child, filter commponent message OnChanges()
+## Check: Add to Child, filter commponent message Getter/Setter

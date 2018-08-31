@@ -12,11 +12,11 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     errorMessage: string;
-    hitCount: number;
     filteredProducts: IProduct[];
     products: IProduct[];
     includeDetail: boolean = true;
-
+    msgFromParent: string;
+     
     constructor(private productService: ProductService) { }
 
     ngOnInit(): void {
@@ -37,8 +37,10 @@ export class ProductListComponent implements OnInit {
         if (filterBy) {
             this.filteredProducts = this.products.filter((product: IProduct) =>
                 product.productName.toLocaleLowerCase().indexOf(filterBy.toLocaleLowerCase()) !== -1);
+                this.msgFromParent = "Results filtered ";
         } else {
             this.filteredProducts = this.products;
+            this.msgFromParent = "Filters cleared";
         }
     }
 }

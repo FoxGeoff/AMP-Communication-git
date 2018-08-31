@@ -13,6 +13,15 @@ export class FilterComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() hitCount: number;
   hitMessage: string;
 
+  private _msgToChild: string;
+  public get msgToChild(): string {
+    return this._msgToChild;
+  }
+  @Input()
+  public set msgToChild(value: string) {
+    this._msgToChild = value;
+  }
+
   constructor() { }
 
   ngOnInit() {
@@ -29,7 +38,7 @@ export class FilterComponent implements OnInit, OnChanges, AfterViewInit {
     if (changes['hitCount'] && !changes['hitCount'].currentValue) {
       this.hitMessage = "No matches found";
     } else {
-      this.hitMessage = "Hits:" + this.hitCount;
+      this.hitMessage = "Hits =" + this.hitCount;
     }
   }
 
